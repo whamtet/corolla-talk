@@ -7,5 +7,11 @@
 (defn- css-name [src]
   (-> src (.split "/") last (.split "\\.") first))
 
-(defmacro defcss [sym src]
-  `(def ~sym ~(-> src slurp (prepend-class (css-name src)))))
+(defmacro defcss
+  ([sym src] `(defcss ~sym ~src false))
+  ([sym src prepend-class?]
+   (let [s (slurp src)]
+     `(def ~sym
+        ~(if prepend-class?
+           (prepend-class s (css-name src))
+           s)))))
