@@ -1,0 +1,69 @@
+$commenterActionEditColor: var(--palette-primary-500);
+$commenterActionEditColorActive: var(--palette-primary-300);
+
+.tagIcon {
+  margin-right: var(--spacing-1);
+}
+
+.answeredTag {
+  color: #03ab61;
+  background: #e6faf1;
+
+  border-color: #03ab61;
+  border-style: solid;
+  border-radius: 2px;
+  border-width: 1px;
+
+  text-transform: uppercase;
+}
+
+.editButton {
+  color: $commenterActionEditColor;
+  &:hover,
+  &.mouseHover {
+    color: $commenterActionEditColorActive;
+  }
+  &:active,
+  &.active {
+    color: $commenterActionEditColorActive;
+  }
+}
+
+.editIcon {
+  margin-right: var(--spacing-1);
+}
+
+.actionBar {
+  min-width: 100px;
+  @media (min-width: $breakpoints-xs) {
+    min-width: 150px;
+  }
+}
+
+.actionButton {
+  padding: var(--spacing-1);
+}
+
+.staticUsername {
+  color: var(--palette-text-100);
+
+  margin-right: var(--spacing-2);
+}
+
+.avatarContainer {
+  width: 24px;
+  height: 24px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.usernameButton {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  max-width: 100%;
+}
